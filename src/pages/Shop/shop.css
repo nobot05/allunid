@@ -1,0 +1,7 @@
+
+
+.gradied {
+    width: 100%;
+    height: 350px;
+    background-image: linear-gradient(to right, #e0fff5 , #e0ffed);
+}
