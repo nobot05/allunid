@@ -79,35 +79,30 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/trade" exact>
-                            <span>Trade</span>
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
                         <NavLink className="nav-link" to="/contact" exact>
                             <span>Contact Us</span>
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/contact" exact>
-                            <span>Login</span>
+                        <NavLink className="nav-link" to="/signup" exact>
+                            <span>Sign Up</span>
                         </NavLink>
                     </li>
                     
                 </ul>
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/used" exact>
+                        <NavLink className="nav-link" to="/favorites" exact>
                             <i className="fas fa-heart"></i>
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/used" exact>
+                        <NavLink className="nav-link" to="/cart" exact>
                             <i className="far fa-shopping-cart"></i>
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/used" exact>
+                        <NavLink className="nav-link" to="/account" exact>
                             <i className="fas fa-user-alt"></i>
                         </NavLink>
                     </li>

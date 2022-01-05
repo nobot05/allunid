@@ -19,7 +19,7 @@ const MainCarousel = ({ items }) => {
 function Item({ item }) {
   return (
     <Paper>
-      <img src={item} style={{width:"80vw", height:"80vh"}} />
+      <img src={item} style={{width:"90vw", height:"90vh"}} />
     </Paper>
   );
 }
