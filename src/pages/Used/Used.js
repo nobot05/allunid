@@ -7,7 +7,7 @@ const Used = () => {
     return (
         <div>
             <div className='gradied'> 
-                <p className='titre'>Welcome to AllUnid's shop!</p>
+                <p className='titre'>Welcome to AllUnid's Used Section!</p>
                 <p className='soustitre'><i>Need to get ready for school and don't know where to start? No problem, we've got what you need! <br></br>You can either search directly or after choosing a category. </i></p>
                 <div className='btn-container'>
                     <button className="category-btn">Books</button>

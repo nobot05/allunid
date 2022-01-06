@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./usedproductdetails.css";
+import "./productdetails.css";
 
-const UsedProductDetails = () => {
+const ProductDetails = () => {
   return (
     // <div className="container">
     //     <h1 className="text-center" style={{paddingTop: "30%"}}>
@@ -11,7 +11,7 @@ const UsedProductDetails = () => {
     // </div>
     <div className="usedPageback">
         <div className="usedContenu">
-            <p className="titre">Used Product Details:</p>
+            <p className="titre">Product Details:</p>
             <div className="allinfo">
                 <div>
                     <img className="produitImg" src="images/intro1.jpeg"></img>
@@ -50,13 +50,14 @@ const UsedProductDetails = () => {
                             <li className="infoContainer">
                                 <div>
                                     <label>
-                                        <span className="namez">Contact Seller: </span>&nbsp;
-                                        <a href="mailto:nour20hk@gmail.com">nour20hk@gmail.com</a>  
+                                        <span className="namez">Quantity that you wish to order: </span>&nbsp;
+                                    <input type='number'/>
                                     </label>
                                 </div>
                             </li>
                         </ul>
                     </form>
+                    <button type="button" class="btn btn-success" style={{marginLeft:'200px'}}>Add to Cart <i className="far fa-shopping-cart"></i></button>
                 </div>
             </div>
         </div>
@@ -64,4 +65,4 @@ const UsedProductDetails = () => {
     )
 }
 
-export default UsedProductDetails;
+export default ProductDetails;

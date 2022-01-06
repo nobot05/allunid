@@ -9,13 +9,21 @@ main {
     height: 100%;
 }
 
+.addingUsed {
+    /* background-color: #dbfaf4; */
+    background-image: linear-gradient(#00A572, #FFFFFF);
+    height: 800px;
+    position: fixed;
+    width: 100%;
+}
+
 .adding-Container {
     margin-left: 200px;
     margin-right: 20px;
     width: 1000px;
-    /* margin-top: 30px; */
+    margin-top: 30px;
     /* padding-top: 30px; */
-    background-color: antiquewhite;
+    background-color: rgb(215, 250, 229);
     /* height: 500px; */
     border-radius: 20px;
 }

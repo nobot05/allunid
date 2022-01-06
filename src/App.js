@@ -15,6 +15,8 @@ import Navbar from './Components/Navbar/Navbar';
 import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
 import AddItem from './pages/AddItem/AddItem';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
+import UsedProductDetails from './pages/UsedProductDetails/UsedProductDetails';
 
 
 const App = () => {
@@ -46,6 +48,12 @@ const App = () => {
           </Route>
           <Route path='/additem' exact>
             <AddItem/>
+          </Route>
+          <Route path='/productdetails' exact>
+            <ProductDetails/>
+          </Route>
+          <Route path='/useddetails' exact>
+            <UsedProductDetails/>
           </Route>
           {/* redirect goes back to home page if we add /anythinggg */}
           <Redirect to="/"></Redirect> 

@@ -11,17 +11,18 @@ body{
 
 .titre {
     /* font-family: 'Oooh Baby', cursive; */
-    font-size: 40px;
+    font-size: 45px;
     /* font-family: 'Shizuru', cursive;     */
     font-family: 'Pushster', cursive;
-    color: rgb(39, 86, 104);
+    color: rgb(28, 58, 70);
     text-align: center;
     padding-top: 25px;
 }
 
 .soustitre{
     text-align: center;
-    color: rgb(79, 81, 82);
+    color: rgb(68, 69, 70);
+    font-size: 18px;
 }
 /* 
 #wave {

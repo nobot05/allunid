@@ -81,7 +81,7 @@ const AddItem = () => {
     //   </div>
     //   </div>
 
-    <div className="signup-page">
+    <div className="addingUsed">
         <div className="adding-Container">
             <div className="addingfrm">
             <h1 className="titre">Fill your item's details!</h1>

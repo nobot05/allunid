@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card, Button} from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 import './shop.css'
 
 const Shop = () => {
@@ -38,28 +39,32 @@ const Shop = () => {
             <div class="row">
                 <div class="col-sm">
                     <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="images/intro1.jpeg" />
+                    <Card.Img variant="top" src="images/intro1.jpeg" style={{ width: '18rem' }, {height:"200px"}}/>
                     <Card.Body>
                         <Card.Title>Card Title</Card.Title>
                         <Card.Text>
                           Some quick example text to build on the card title and make up the bulk of
                           the card's content.
                         </Card.Text>
+                        <Card.Text>
+                          Price: 20$
+                        </Card.Text>
                         <div className='d-flex justify-content-around'>
-                            <Button variant="primary">Product Details</Button>
-                            <Button variant="primary" style={{marginLefy: 'auto'}}>fav</Button>
+                            <NavLink to='/productdetails'>
+                                <Button variant="primary">Product Details</Button>
+                            </NavLink>
+                            <Button variant="primary" style={{marginLeft: 'auto'}}><i class="fas fa-heart"></i></Button>
                         </div>
                     </Card.Body>
                     </Card>
                 </div>
                 <div class="col-sm">
-                    <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="images/intro2.jpeg" />
+                    <Card style={{ width: '18rem' }, {height:"385px"}}>
+                    <Card.Img variant="top" src="images/intro2.jpeg" style={{ width: '18rem' }, {height:"200px"}}/>
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <Card.Title>Kortasiye</Card.Title>
                         <Card.Text>
-                          Some quick example text to build on the card title and make up the bulk of
-                          the card's content.
+                          Contains pens, pencils, a ruler, a sharpener and an eraser.
                         </Card.Text>
                         <div className='d-flex justify-content-around'>
                             <Button variant="primary">Product Details</Button>
