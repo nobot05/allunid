@@ -1,4 +1,5 @@
 import React from 'react';
+import {useState} from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -24,12 +25,20 @@ import EditProfile from './pages/EditProfile/EditProfile';
 
 
 const App = () => {
+
+  const [user,setLoginUser] = useState({
+
+  })
+
   return (
     <Router>
       <Navbar/>
       <main>
         <Switch>
           <Route path='/' exact>
+          {/* {
+      user && user._id ? <Home/>:<Login/>
+    } */}
             <Home/>
           </Route>
           <Route path='/shop' exact>
@@ -48,7 +57,7 @@ const App = () => {
             <Signup/>
           </Route>
           <Route path='/login' exact>
-            <Login/>
+            <Login setLoginUser={setLoginUser}/>
           </Route>
           <Route path='/additem' exact>
             <AddItem/>

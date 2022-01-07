@@ -149,6 +149,7 @@ const AddItem = () => {
                             </label>
                         </div>
                     </li>
+                    <button type="button" class="btn btn-success addItemBtn" style={{marginLeft:'200px'}}>Add Item</button>
                 </ul>
                 </div>
               </form>

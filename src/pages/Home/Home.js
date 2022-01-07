@@ -1,6 +1,7 @@
 import React from "react";
 import MainCarousel from "../../Components/Carousel/MainCarousel";
 import "../../Components/homeStyle/homeStyle.css";
+import "./home.css"
 
 const Home = () => {
   const data = [
@@ -9,10 +10,13 @@ const Home = () => {
     "/images/intro3.jpeg",
   ];
   return (
-    <div className="container-fluid">
+    <div >
       <div className="container-carousel text-center">
         <MainCarousel className="w-75" interval={4000} items={data} />
       </div>
+      <section>
+        <div class="curve"></div>
+      </section>
     </div>
   );
 };
