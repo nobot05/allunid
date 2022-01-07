@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./account.css";
+import "./editprofile.css";
 import {Card, Button} from 'react-bootstrap'
 
 
-const Account = () => {
+const EditProfile = () => {
   return (
     // <div className="container">
     //     <h1 className="text-center" style={{paddingTop: "30%"}}>
@@ -19,9 +19,7 @@ const Account = () => {
                         <h1 className="userName">John Doe</h1>
                     </div>
                     <div className="buttonsAccount">
-                        <NavLink to="/editprofile">
-                            <button className="button5" style={{backgroundColor:"#42cc8c"}}>Edit</button>
-                        </NavLink>
+                        <button className="button5" style={{backgroundColor:"#42cc8c"}}>Edit</button>
                         <button className="button5" style={{backgroundColor:"#42cc8c"}}>Signout</button>
                     </div>
                 </div>
@@ -30,29 +28,31 @@ const Account = () => {
               <form className="displayingaddition">
                   <div>
                   <ul>
-                    <li className="infoContainer">
+                    <li className="editContainer">
                         <div>
                             <label>
-                            Username: John Doe
+                            Change your Name: 
+                            <input type='text'/>
                             </label>
                         </div>
                     </li>
-                    <li className="infoContainer">
+                    <li className="editContainer">
                         <div>
                             <label>
-                                Your email: johndoe@gmail.com
+                                Change your email:
+                            <input type='email'/>
                             </label>
                         </div>
                     </li>
-                    
                     </ul>
                     </div>
                     <div>
                     <ul>
-                    <li className="infoContainer">
+                    <li className="editContainer">
                         <div>
                             <label>
-                            Your Password: *******
+                            Change your password:
+                            <input type='password'/>
                             </label>
                         </div>
                     </li>
@@ -66,4 +66,4 @@ const Account = () => {
   )
 }
 
-export default Account;
+export default EditProfile;

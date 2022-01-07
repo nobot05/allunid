@@ -1,0 +1,14 @@
+.favBg {
+    background-image: linear-gradient(#00A572, #FFFFFF);
+    width: 100%;
+    /* height: 9000px; */
+    /* position: fixed; */
+}
+
+.favTitre {
+    font-family: 'Pushster', cursive;
+    color: rgb(27, 50, 59);
+    font-size: 45px;
+    padding-top: 15px;
+    margin-left: 80px;
+}

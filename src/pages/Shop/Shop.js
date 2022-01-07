@@ -5,9 +5,9 @@ import './shop.css'
 
 const Shop = () => {
     return (
-        <div>
-            <div className='gradied'> 
-                <p className='titre'>Welcome to AllUnid's shop!</p>
+        <div className='gradiedbg'>
+            <div className='gradiedtop'> 
+                <h1 className='titre'>Welcome to AllUnid's shop!</h1>
                 <p className='soustitre'><i>Need to get ready for school and don't know where to start? No problem, we've got what you need! <br></br>You can either search directly or after choosing a category. </i></p>
                 <div className='btn-container'>
                     <button className="category-btn">Books</button>
@@ -36,6 +36,76 @@ const Shop = () => {
                 </div>
             </div> */}
             <div className='container'>
+            <div class="row">
+                <div class="col-sm">
+                    <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src="images/intro1.jpeg" style={{ width: '18rem' }, {height:"200px"}}/>
+                    <Card.Body>
+                        <Card.Title>Card Title</Card.Title>
+                        <Card.Text>
+                          Some quick example text to build on the card title and make up the bulk of
+                          the card's content.
+                        </Card.Text>
+                        <Card.Text>
+                          Price: 20$
+                        </Card.Text>
+                        <div className='d-flex justify-content-around'>
+                            <NavLink to='/productdetails'>
+                                <Button variant="primary">Product Details</Button>
+                            </NavLink>
+                            <Button variant="primary" style={{marginLeft: 'auto'}}><i class="fas fa-heart"></i></Button>
+                        </div>
+                    </Card.Body>
+                    </Card>
+                </div>
+                <div class="col-sm">
+                    <Card style={{ width: '18rem' }, {height:"385px"}}>
+                    <Card.Img variant="top" src="images/intro2.jpeg" style={{ width: '18rem' }, {height:"200px"}}/>
+                    <Card.Body>
+                        <Card.Title>Kortasiye</Card.Title>
+                        <Card.Text>
+                          Contains pens, pencils, a ruler, a sharpener and an eraser.
+                        </Card.Text>
+                        <div className='d-flex justify-content-around'>
+                            <Button variant="primary">Product Details</Button>
+                            <Button variant="primary" style={{marginLefy: 'auto'}}>fav</Button>
+                        </div>
+                    </Card.Body>
+                    </Card>
+                </div>
+                <div class="col-sm">
+                    <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src="images/intro3.jpeg" />
+                    <Card.Body>
+                        <Card.Title>Card Title</Card.Title>
+                        <Card.Text>
+                          Some quick example text to build on the card title and make up the bulk of
+                          the card's content.
+                        </Card.Text>
+                        <div className='d-flex justify-content-around'>
+                            <Button variant="primary">Product Details</Button>
+                            <Button variant="info" style={{marginLefy: 'auto'}}>fav</Button>
+                        </div>
+                    </Card.Body>
+                    </Card>
+                </div>
+                <div class="col-sm">
+                    <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src="images/intro1.jpeg" />
+                    <Card.Body>
+                        <Card.Title>Card Title</Card.Title>
+                        <Card.Text>
+                          Some quick example text to build on the card title and make up the bulk of
+                          the card's content.
+                        </Card.Text>
+                        <div className='d-flex justify-content-around'>
+                            <Button variant="primary">Product Details</Button>
+                            <Button variant="primary" style={{marginLefy: 'auto'}}>fav</Button>
+                        </div>
+                    </Card.Body>
+                    </Card>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm">
                     <Card style={{ width: '18rem' }}>

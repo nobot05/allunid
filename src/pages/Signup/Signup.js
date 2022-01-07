@@ -15,11 +15,7 @@ const Signup = () => {
                     <h1 className="title" align="center">Sign up</h1>
                     <div className="inputContainer">
                         <input type="text" className="input" placeholder="a"/>
-                        <label for="" className="label">First Name</label>
-                    </div>
-                    <div className="inputContainer">
-                        <input type="text" className="input" placeholder="a"/>
-                        <label for="" className="label">Last Name</label>
+                        <label for="" className="label">Your Full Name</label>
                     </div>
                     <div className="inputContainer">
                         <input type="text" className="input" placeholder="a"/>

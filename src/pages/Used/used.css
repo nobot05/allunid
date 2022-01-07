@@ -14,7 +14,7 @@ body{
     font-size: 40px;
     /* font-family: 'Shizuru', cursive;     */
     font-family: 'Pushster', cursive;
-    color: rgb(39, 86, 104);
+    color: rgb(25, 53, 65);
     text-align: center;
     padding-top: 25px;
 }
@@ -163,7 +163,7 @@ body{
 }
 
 .itemImg {
-    height: 250px;
+    height: 248px;
     width: 320px;
 }
 

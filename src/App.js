@@ -17,6 +17,10 @@ import Login from './pages/Login/Login';
 import AddItem from './pages/AddItem/AddItem';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import UsedProductDetails from './pages/UsedProductDetails/UsedProductDetails';
+import Favorites from './pages/Favorites/Favorites';
+import Cart from './pages/Cart/Cart';
+import Account from './pages/Account/Account';
+import EditProfile from './pages/EditProfile/EditProfile';
 
 
 const App = () => {
@@ -54,6 +58,18 @@ const App = () => {
           </Route>
           <Route path='/useddetails' exact>
             <UsedProductDetails/>
+          </Route>
+          <Route path='/favorites' exact>
+            <Favorites/>
+          </Route>
+          <Route path='/cart' exact>
+            <Cart/>
+          </Route>
+          <Route path='/account' exact>
+            <Account/>
+          </Route>
+          <Route path='/editprofile' exact>
+            <EditProfile/>
           </Route>
           {/* redirect goes back to home page if we add /anythinggg */}
           <Redirect to="/"></Redirect> 

@@ -5,9 +5,9 @@ import { NavLink } from 'react-router-dom';
 
 const Used = () => {
     return (
-        <div>
-            <div className='gradied'> 
-                <p className='titre'>Welcome to AllUnid's Used Section!</p>
+        <div className='gradiedbg'>
+            <div className='gradiedtop'> 
+                <h1 className='titre'>Welcome to AllUnid's Used Section!</h1>
                 <p className='soustitre'><i>Need to get ready for school and don't know where to start? No problem, we've got what you need! <br></br>You can either search directly or after choosing a category. </i></p>
                 <div className='btn-container'>
                     <button className="category-btn">Books</button>
