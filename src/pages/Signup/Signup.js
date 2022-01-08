@@ -46,16 +46,16 @@ const Signup = () => {
                     </div>
                     <div className="inputContainer">
                         {/* <input type="text" className="input" placeholder="a" value={user.email} onChange={handleChange}/> */}
-                        <input type="text" className="input" placeholder="a" onChange={handleChange}/>
+                        <input type="email" className="input" placeholder="a" onChange={handleChange} required/>
                         <label for="" className="label">Email</label>
                     </div>
                     <div className="inputContainer">
                         {/* <input type="text" className="input" placeholder="a" value={user.password} onChange={handleChange}/> */}
-                        <input type="text" className="input" placeholder="a" onChange={handleChange}/>
+                        <input type="password" className="input" placeholder="a" onChange={handleChange}/>
                         <label for="" className="label">Password</label>
                     </div>
                     <div className="inputContainer">
-                        <input type="text" className="input" placeholder="a"/>
+                        <input type="password" className="input" placeholder="a"/>
                         <label for="" className="label">Confirm Password</label>
                     </div>
                     <div className="switching">

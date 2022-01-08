@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {useState} from 'react';
 import {
   BrowserRouter as Router,
@@ -25,6 +25,7 @@ import EditProfile from './pages/EditProfile/EditProfile';
 
 
 const App = () => {
+
 
   const [user,setLoginUser] = useState({
 

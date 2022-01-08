@@ -32,8 +32,6 @@ const Home = () => {
             <h1>Squishy-ish Button</h1>
             <input class="btn" type="button" />
             </div> */}
-
-
       </div>
     </div>
   );

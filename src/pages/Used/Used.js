@@ -8,7 +8,7 @@ const Used = () => {
         <div className='gradiedbg'>
             <div className='gradiedtop'> 
                 <h1 className='titre'>Welcome to AllUnid's Used Section!</h1>
-                <p className='soustitre'><i>Need to get ready for school and don't know where to start? No problem, we've got what you need! <br></br>You can either search directly or after choosing a category. </i></p>
+                <p className='soustitre'><i>Need to get ready for school but can't afford new items and products? It's alright! You can check  <br></br>our used section where users upload items taht they don't need anymore. </i></p>
                 <div className='btn-container'>
                     <button className="category-btn">Books</button>
                     <button className="category-btn">Stationery</button>
