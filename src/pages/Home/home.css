@@ -47,6 +47,7 @@ section {
     background-color: rgb(215, 250, 229);
     height: 210px;
     border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .wrapper{
@@ -54,65 +55,73 @@ section {
     /* top: 50%; */
     /* left: 50%; */
     /* transform: translate(-50%, -50%); */
-  }
+}
   
-  .firstLogBtn{
-    display: block;
-    width: 200px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 18px;
-    font-family: sans-serif;
-    text-decoration: none;
-    color: #333;
-    border: 2px solid #333;
-    letter-spacing: 2px;
-    text-align: center;
-    position: relative;
-    transition: all .35s;
-  }
+.firstLogBtn{
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
   
-  .firstLogBtn{
-    position: relative;
-    z-index: 2;
-  }
+.firstLogBtn{
+  position: relative;
+  z-index: 2;
+}
   
-  .firstLogBtn:after{
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #ff003b;
-    transition: all .35s;
-  }
+.firstLogBtn:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ff003b;
+  transition: all .35s;
+}
   
-  .firstLogBtn:hover{
-    color: #fff;
-  }
+.firstLogBtn:hover{
+  color: #fff;
+}
   
-  .firstLogBtn:hover:after{
-    width: 100%;
-  }
+.firstLogBtn:hover:after{
+  width: 100%;
+}
 
-  .button-three{
-    text-align: center;
-    cursor: pointer;
-    font-size:24px;
-    margin: 0 0 0 100px;
-  }
-  .button-three {
-    position: relative;
-    background-color: #f39c12;
-    border: none;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
+.joingBtn{
+  margin-left: 90px;
+  padding-left: 90px;
+}
+
+.button-three{
+  text-align: center;
+  cursor: pointer;
+  font-size:24px;
+  /* margin: 0 0 0 100px; */
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 200px;
+}
+.button-three {
+  position: relative;
+  background-color: #00A572;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
 }
 
 .button-three:hover{
@@ -123,7 +132,8 @@ section {
 
 .button-three:after {
     content: "";
-    background: #f1c40f;
+    background: #1aad7f;
+    /* border-radius: 20px; */
     display: block;
     position: absolute;
     padding-top: 300%;
@@ -135,6 +145,7 @@ section {
 }
 
 .button-three:active:after {
+  border-radius: 20px;
     padding: 0;
     margin: 0;
     opacity: 1;
