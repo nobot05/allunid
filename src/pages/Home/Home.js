@@ -5,9 +5,9 @@ import "./home.css"
 
 const Home = () => {
   const data = [
-    "/images/intro1.jpeg",
-    "/images/intro2.jpeg",
-    "/images/intro3.jpeg",
+    "/images/home1.jpeg",
+    "/images/home2.jpeg",
+    "/images/home3.jpeg",
   ];
   return (
     <div >
@@ -17,6 +17,14 @@ const Home = () => {
       <section>
         <div class="curve"></div>
       </section>
+      <div className="logeen">
+        <h1 className="titre">Become part of the AllUnid Family!</h1>
+        <button class="button-three">Login!</button>
+        <div class="wrap">
+  <h1>Squishy-ish Button</h1>
+  <input class="btn" type="button" />
+</div>
+      </div>
     </div>
   );
 };
