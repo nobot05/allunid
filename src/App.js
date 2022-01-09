@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -22,14 +22,25 @@ import Favorites from './pages/Favorites/Favorites';
 import Cart from './pages/Cart/Cart';
 import Account from './pages/Account/Account';
 import EditProfile from './pages/EditProfile/EditProfile';
+import auth from "./Services/AuthService"
+import { set } from 'mongoose';
 
 
 const App = () => {
 
 
-  const [user,setLoginUser] = useState({
-
+  const [user,setUser] = useState({
+    email:undefined
   })
+  const [logged, setLogged] = useState(false);
+  useEffect(() => {
+    const result = auth.getUser();
+    console.log(result)
+    if(result !== undefined){
+      setUser(result.email);
+      setLogged(true)
+    }
+  }, [setLogged])
 
   return (
     <Router>
@@ -37,10 +48,7 @@ const App = () => {
       <main>
         <Switch>
           <Route path='/' exact>
-          {/* {
-      user && user._id ? <Home/>:<Login/>
-    } */}
-            <Home/>
+             <Home/> 
           </Route>
           <Route path='/shop' exact>
             <Shop/>
@@ -58,7 +66,7 @@ const App = () => {
             <Signup/>
           </Route>
           <Route path='/login' exact>
-            <Login setLoginUser={setLoginUser}/>
+            <Login setLoginUser={setUser}/>
           </Route>
           <Route path='/additem' exact>
             <AddItem/>
@@ -70,16 +78,16 @@ const App = () => {
             <UsedProductDetails/>
           </Route>
           <Route path='/favorites' exact>
-            <Favorites/>
+            {logged ? <Favorites/>: <Login />}
           </Route>
           <Route path='/cart' exact>
-            <Cart/>
+          {logged ? <Cart/>: <Login />}
           </Route>
           <Route path='/account' exact>
-            <Account/>
+          {logged ? <Account/>: <Login />}
           </Route>
           <Route path='/editprofile' exact>
-            <EditProfile/>
+            {logged ? <EditProfile/> : <Login />}
           </Route>
           {/* redirect goes back to home page if we add /anythinggg */}
           <Redirect to="/"></Redirect> 

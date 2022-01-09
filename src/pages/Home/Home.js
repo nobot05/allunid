@@ -5,6 +5,7 @@ import "../../Components/homeStyle/homeStyle.css";
 import "./home.css"
 
 const Home = () => {
+  
   const data = [
     "/images/home1.jpeg",
     "/images/home2.jpeg",

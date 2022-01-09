@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./used.css"
 import { NavLink } from 'react-router-dom';
+import Item from '../../Components/Item/Item';
+import axios from 'axios';
+import { post } from 'jquery';
 
 
 const Used = () => {
+
+    const [posts, setPosts] = useState([]);
+    useEffect(()=>{
+        axios.get("http://localhost:5000/api/posts").then(data => {
+            console.log("Data is here")
+            setPosts(data.data);
+            console.log("From parent:",posts)
+        }).catch(err => {
+            console.log(err);
+        })
+    },[setPosts]);
+
     return (
         <div className='gradiedbg'>
             <div className='gradiedtop'> 
@@ -31,57 +46,13 @@ const Used = () => {
                     </NavLink>
                 </div>
             </div>
-            <div className="card itemPost">
-                <div className="row no-gutters">
-                    <div className="col-auto">
-                        <img src="images/intro1.jpeg" className="img-fluid itemImg" alt=""/>
-                    </div>
-                    <div className="col">
-                        <div className="card-block px-2">
-                            <h4 className="card-title">Title</h4>
-                            <p className="card-text">Description</p>
-                            {/* <a href="#" class="btn btn-primary">Details</a> */}
-                            <NavLink to="/useddetails">
-                                <button class="btn btn-primary">Details</button>
-                            </NavLink>
-                        </div>
-                    </div>
-                </div>         
-            </div>
-            <div className="card itemPost">
-                <div className="row no-gutters">
-                    <div className="col-auto">
-                        <img src="images/intro2.jpeg" className="img-fluid itemImg" alt=""/>
-                    </div>
-                    <div className="col">
-                        <div className="card-block px-2">
-                            <h4 className="card-title">Stationary</h4>
-                            <p className="card-text">Bought a long time ago and never used.</p>
-                            {/* <a href="#" class="btn btn-primary">Details</a> */}
-                            <NavLink to="/useddetails">
-                                <button class="btn btn-primary detailsBtn">Details</button>
-                            </NavLink>
-                        </div>
-                    </div>
-                </div>         
-            </div>
-            <div className="card itemPost">
-                <div className="row no-gutters">
-                    <div className="col-auto">
-                        <img src="images/intro3.jpeg" className="img-fluid itemImg" alt=""/>
-                    </div>
-                    <div className="col">
-                        <div className="card-block px-2">
-                            <h4 className="card-title">Title</h4>
-                            <p className="card-text">Description</p>
-                            {/* <a href="#" class="btn btn-primary">Details</a> */}
-                            <NavLink to="/useddetails">
-                                <button class="btn btn-primary">Details</button>
-                            </NavLink>
-                        </div>
-                    </div>
-                </div>         
-            </div>
+            {posts && posts.length > 0 ? (
+                posts.map((post) => (
+                    <Item key={post._id} post={post} />
+                ))
+            ) : (
+                <h1>Loading data</h1>
+            )}
         </div>
     )
 }

@@ -5,12 +5,10 @@ import {Card, Button} from 'react-bootstrap'
 
 
 const Favorites = () => {
+    // if(auth2.verifyToken() != "ok"){
+    //     window.location.replace("/login");
+    // }
   return (
-    // <div className="container">
-    //     <h1 className="text-center" style={{paddingTop: "30%"}}>
-    //         Favs
-    //     </h1>
-    // </div>
     <div className="favBg">
         {/* <hr></hr> */}
         <p className="favTitre">Your Favorites!</p>

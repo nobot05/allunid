@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import "./additem.css";
 import { Component } from 'react'
 import Select from 'react-select'
+import FormData from 'form-data'
+import auth from "../../Services/AuthService";
+import axios from "axios";
 
 const options = [
     { value: '0', label: 'Books' },
@@ -10,47 +13,82 @@ const options = [
     { value: '2', label: 'Bags' }
   ]
 
-const AddItem = () => {
+const AddItem =  () => {
 
     const [status, setStatus] = useState("Add Item");
+    const [form, setForm] = useState({
+        title: "",
+        description: "",
+        category: "",
+        price: "",
+        sellerEmail: "",
+        image: "",
+    })
     const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
     const {uname, udescription, ucategory, uprice, uemail, uimage } = e.target.elements;
+    console.log(e.target.image.files[0]);
+    const formData = new FormData();
+
     let details = {
-        uname: uname.value,
-        udescription: udescription.value,
-        ucategory: ucategory.value,
-        uprice: uprice.value,
-        uemail: uemail.value,
-        uimage: uimage.value
+        title: uname.value,
+        description: udescription.value,
+        category: ucategory.value,
+        price: uprice.value,
+        sellerEmail: uemail.value,
+        // image: e.target.image.files[0],
     };
-    let response = await fetch("http://localhost:5000/additem", {
-      method: "POST",
+    formData.append("title", form.title);
+    formData.append("description", form.description);
+    formData.append("category", form.category);
+    formData.append("price", form.price);
+    formData.append("sellerEmail", form.sellerEmail);
+    formData.append("image", form.image);
+    let response = await axios.post("http://localhost:5000/api/posts", formData,{
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "multipart/form-data",
+        "x-auth-token": auth.getToken()
         // ;charset=utf-8
       },
-      body: JSON.stringify(details),
+    }).then(res => {
+        alert("YAY");
+    }).catch(err => {
+        alert("Frick")
+        console.log(err);
     });
     setStatus("Add Item");
-    let result = await response.json();
-    alert(result.status);
+    // let result = await response.json();
+    // alert("We added the item");
     };
+
+    const handleChange = (event) => {
+        setForm({
+          ...form,
+          [event.target.name]: event.target.value,
+        });
+      };
+    
+      const handleFileChange = (event) => {
+        setForm({
+          ...form,
+          [event.target.name]: event.target.files[0],
+        });
+      };
 
   return (
     <div className="addingUsed">
         <div className="adding-Container">
             <div className="addingfrm">
             <h1 className="titre">Fill your item's details!</h1>
-              <form className="displayingaddition" enctype="multipart/form-data" onSubmit={handleSubmit}>
+              <form className="displayingaddition" encType="multipart/form-data" onSubmit={handleSubmit}>
                   <div>
                   <ul>
                     <li className="infoContainer">
                         <div>
                             <label>
                             Product name:{'   '} &nbsp;
-                                <input type='text' id="uname" required/>
+                                <input name="title" type='text' id="uname" onChange={handleChange} required/>
                             </label>
                         </div>
                     </li>
@@ -58,7 +96,7 @@ const AddItem = () => {
                         <div>
                             <label>
                                 Product Description:{'   '} &nbsp;
-                                <input type='text' id="udescription" required/>
+                                <input name="description" type='text' id="udescription" onChange={handleChange} required/>
                             </label>
                         </div>
                     </li>
@@ -66,15 +104,15 @@ const AddItem = () => {
                         <div>
                             <label>Product Category: &nbsp;
                                 {/* <Select options={options} /> */}
-                                <select id="ucategory" required>
-                                    <option value="0">Books</option>
-                                    <option value="1">Stationery</option>
-                                    <option value="2">Bags</option>
-                                    <option value="3">Electronics</option>
-                                    <option value="4">Chemistry tools</option>
-                                    <option value="5">Bio tools</option>
-                                    <option value="6">Physics tools</option>
-                                    <option value="7">Architecture tools</option>
+                                <select name="category" id="ucategory" onChange={handleChange} required>
+                                    <option value="books">Books</option>
+                                    <option value="stationery">Stationery</option>
+                                    <option value="bags">Bags</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="chemistry tools">Chemistry tools</option>
+                                    <option value="biology tools">Bio tools</option>
+                                    <option value="physics tools">Physics tools</option>
+                                    <option value="architechture tools">Architecture tools</option>
                                 </select>
                             </label>
                         </div>
@@ -83,7 +121,7 @@ const AddItem = () => {
                         <div>
                             <label>
                                 Price in LBP:{'   '} &nbsp;
-                                <input type='number' id="uprice" required/>
+                                <input name="price" type='number' id="uprice" onChange={handleChange} required/>
                             </label>
                         </div>
                     </li>
@@ -95,7 +133,7 @@ const AddItem = () => {
                         <div>
                             <label>
                             Enter your email:{'   '} &nbsp;
-                                <input type='email' id="uemail" required/>
+                                <input name="sellerEmail" type='email' id="uemail" onChange={handleChange} required/>
                             </label>
                         </div>
                     </li>
@@ -103,7 +141,7 @@ const AddItem = () => {
                         <div>
                             <label>
                             Add a picture that represents your item:{'   '} &nbsp; 
-                                <input type='file' accept="image/x-png,image/gif,image/jpeg" id="uimage" required/>
+                                <input name="image" type='file' accept="image/x-png,image/gif,image/jpeg" id="uimage" onChange={handleFileChange} required/>
                             </label>
                         </div>
                     </li>
