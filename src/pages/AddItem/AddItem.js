@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }  from "react";
 import { NavLink } from "react-router-dom";
 import "./additem.css";
 import { Component } from 'react'
@@ -11,19 +11,46 @@ const options = [
   ]
 
 const AddItem = () => {
+
+    const [status, setStatus] = useState("Add Item");
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+    const {uname, udescription, ucategory, uprice, uemail, uimage } = e.target.elements;
+    let details = {
+        uname: uname.value,
+        udescription: udescription.value,
+        ucategory: ucategory.value,
+        uprice: uprice.value,
+        uemail: uemail.value,
+        uimage: uimage.value
+    };
+    let response = await fetch("http://localhost:5000/additem", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // ;charset=utf-8
+      },
+      body: JSON.stringify(details),
+    });
+    setStatus("Add Item");
+    let result = await response.json();
+    alert(result.status);
+    };
+
   return (
     <div className="addingUsed">
         <div className="adding-Container">
             <div className="addingfrm">
             <h1 className="titre">Fill your item's details!</h1>
-              <form className="displayingaddition">
+              <form className="displayingaddition" enctype="multipart/form-data" onSubmit={handleSubmit}>
                   <div>
                   <ul>
                     <li className="infoContainer">
                         <div>
                             <label>
                             Product name:{'   '} &nbsp;
-                                <input type='text' required/>
+                                <input type='text' id="uname" required/>
                             </label>
                         </div>
                     </li>
@@ -31,7 +58,7 @@ const AddItem = () => {
                         <div>
                             <label>
                                 Product Description:{'   '} &nbsp;
-                                <input type='text' required/>
+                                <input type='text' id="udescription" required/>
                             </label>
                         </div>
                     </li>
@@ -39,7 +66,7 @@ const AddItem = () => {
                         <div>
                             <label>Product Category: &nbsp;
                                 {/* <Select options={options} /> */}
-                                <select required>
+                                <select id="ucategory" required>
                                     <option value="0">Books</option>
                                     <option value="1">Stationery</option>
                                     <option value="2">Bags</option>
@@ -56,7 +83,7 @@ const AddItem = () => {
                         <div>
                             <label>
                                 Price in LBP:{'   '} &nbsp;
-                                <input type='number' required/>
+                                <input type='number' id="uprice" required/>
                             </label>
                         </div>
                     </li>
@@ -68,7 +95,7 @@ const AddItem = () => {
                         <div>
                             <label>
                             Enter your email:{'   '} &nbsp;
-                                <input type='email' required/>
+                                <input type='email' id="uemail" required/>
                             </label>
                         </div>
                     </li>
@@ -76,11 +103,11 @@ const AddItem = () => {
                         <div>
                             <label>
                             Add a picture that represents your item:{'   '} &nbsp; 
-                                <input type='file' accept="image/x-png,image/gif,image/jpeg" required/>
+                                <input type='file' accept="image/x-png,image/gif,image/jpeg" id="uimage" required/>
                             </label>
                         </div>
                     </li>
-                    <button type="submit" class="btn btn-success addItemBtn" style={{marginLeft:'200px'}}>Add Item</button>
+                    <button type="submit" className="btn btn-success addItemBtn" style={{marginLeft:'200px'}}>{status}</button>
                 </ul>
                 </div>
               </form>

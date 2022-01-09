@@ -28,15 +28,15 @@ const Login = ({setLoginUser}) => {
   return (
         <div className="signup-page">
             <div className="signupFrm">
-                <form action="" class="form">
+                <form action="" className="form">
                     <h1 className="title" align="center">Log In</h1>
                     <div className="inputContainer">
-                        <input type="email" class="input" placeholder="a" value={user.email}  onChange={handleChange}/>
-                        <label for="" className="label">Email</label>
+                        <input type="email" className="input" placeholder="a" id="email"  onChange={handleChange} required/>
+                        <label htmlFor="" className="label">Email</label>
                     </div>
                     <div className="inputContainer">
-                        <input type="password" className="input" placeholder="a" value={user.password}  onChange={handleChange}/>
-                        <label for="" className="label">Password</label>
+                        <input type="password" className="input" placeholder="a" id="password" onChange={handleChange} required/>
+                        <label htmlFor="" className="label">Password</label>
                     </div>
                     <div className="switching">
                         <input type="submit" className="submitBtn" value="Login" onClick={login}/>
