@@ -2,14 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./account.css";
 import {Card, Button} from 'react-bootstrap'
+import auth from "../../Services/AuthService";
 
 
 const Account = () => {
 
-    // const logoutUser = () => {
-    //     auth.removeToken();
-    //     window.location.replace("/");
-    //   };
+    const logoutUser = () => {
+        auth.removeToken();
+        window.location.replace("/");
+      };
 
   return (
 <div className="addingUsed">
@@ -23,7 +24,7 @@ const Account = () => {
                         <NavLink to="/editprofile">
                             <button className="button5" style={{backgroundColor:"#42cc8c"}}>Edit</button>
                         </NavLink>
-                        <button className="button5" style={{backgroundColor:"#42cc8c"}}>Signout</button>
+                        <button className="button5" style={{backgroundColor:"#42cc8c"}} onClick={logoutUser}>Signout</button>
                     </div>
                 </div>
             

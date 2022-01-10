@@ -23,35 +23,6 @@ body{
     text-align: center;
     color: rgb(79, 81, 82);
 }
-/* 
-#wave {
-    position: relative;
-    height: 70px;
-    width: 100%;
-    background: #e0efe3;
-  }
-  #wave:before {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 340px;
-    height: 80px;
-    background-color: white;
-    right: -5px;
-    top: 40px;
-  }
-  #wave:after {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 300px;
-    height: 70px;
-    background-color: #e0efe3;
-    left: 0;
-    top: 27px;
-  } */
 
 .btn-container {
     width: 100%;
@@ -177,12 +148,12 @@ body{
      /* margin-bottom: 10px; */
  }
 
- .card-title {
+ .itemTitle{
      margin-top: 20px;
      margin-bottom: 20px;
  }
 
- .card-text {
+ .itemText {
     margin-top: 40px;
     margin-bottom: 40px;
  }

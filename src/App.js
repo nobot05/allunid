@@ -74,7 +74,7 @@ const App = () => {
           <Route path='/productdetails' exact>
             <ProductDetails/>
           </Route>
-          <Route path='/useddetails' exact>
+          <Route path='/used/:id' exact>
             <UsedProductDetails/>
           </Route>
           <Route path='/favorites' exact>
@@ -89,6 +89,7 @@ const App = () => {
           <Route path='/editprofile' exact>
             {logged ? <EditProfile/> : <Login />}
           </Route>
+          {/* <Route path="/posts/:id" component={UsedProductDetails} /> */}
           {/* redirect goes back to home page if we add /anythinggg */}
           <Redirect to="/"></Redirect> 
         </Switch>

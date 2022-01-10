@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 
 const Item = ({post}) => {
     console.log("From item:",post)
-    // setTimeout(5000);
   return (
       <React.Fragment>
       {post ? (
@@ -14,9 +13,9 @@ const Item = ({post}) => {
         </div>
         <div className="col">
             <div className="card-block px-2">
-                <h4 className="card-title">{post.title}</h4>
-                <p className="card-text"><span style={{fontWeight:"bold"}}>Description: </span><i>{post.description}</i></p>
-                <NavLink to="/useddetails">
+                <h4 className="card-title itemTitle">{post.title}</h4>
+                <p className="card-text itemText"><span style={{fontWeight:"bold"}}>Description: </span><i>{post.description}</i></p>
+                <NavLink to={`/used/${post._id}`}>
                     <button class="btn btn-primary">Details</button>
                 </NavLink>
             </div>

@@ -3,12 +3,8 @@ import { NavLink } from "react-router-dom";
 import "./usedproductdetails.css";
 
 const UsedProductDetails = () => {
+    
   return (
-    // <div className="container">
-    //     <h1 className="text-center" style={{paddingTop: "30%"}}>
-    //         Product Details
-    //     </h1>
-    // </div>
     <div className="usedPageback">
         <div className="usedContenu">
             <p className="titre">Used Product Details:</p>
