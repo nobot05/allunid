@@ -112,7 +112,7 @@ const AddItem =  () => {
                                     <option value="chemistry tools">Chemistry tools</option>
                                     <option value="biology tools">Bio tools</option>
                                     <option value="physics tools">Physics tools</option>
-                                    <option value="architechture tools">Architecture tools</option>
+                                    <option value="architecture tools">Architecture tools</option>
                                 </select>
                             </label>
                         </div>

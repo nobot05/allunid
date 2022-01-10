@@ -51,7 +51,7 @@ const Used = () => {
                     <Item key={post._id} post={post} />
                 ))
             ) : (
-                <h1>Loading data</h1>
+                <h1 align="center">Loading data</h1>
             )}
         </div>
     )

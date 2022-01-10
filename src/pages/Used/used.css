@@ -156,17 +156,33 @@ body{
 }
 
 .itemPost {
-    margin-right: 200px;
-    margin-left: 200px;
+    margin-right: 260px;
+    margin-left: 260px;
     height: 250px;
     margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: aliceblue;
+    border-color: #201f1f;
+    border-style: solid;
 }
 
 .itemImg {
     height: 248px;
     width: 320px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
  .detailsBtn {
      /* margin-bottom: 10px; */
+ }
+
+ .card-title {
+     margin-top: 20px;
+     margin-bottom: 20px;
+ }
+
+ .card-text {
+    margin-top: 40px;
+    margin-bottom: 40px;
  }

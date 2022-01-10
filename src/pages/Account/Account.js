@@ -5,12 +5,13 @@ import {Card, Button} from 'react-bootstrap'
 
 
 const Account = () => {
+
+    // const logoutUser = () => {
+    //     auth.removeToken();
+    //     window.location.replace("/");
+    //   };
+
   return (
-    // <div className="container">
-    //     <h1 className="text-center" style={{paddingTop: "30%"}}>
-    //         Favs
-    //     </h1>
-    // </div>
 <div className="addingUsed">
         <div className="adding-Container">
             <div className="profilefrm">
